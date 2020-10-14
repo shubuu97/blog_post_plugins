@@ -1,0 +1,50 @@
+/**
+ * Minimal styling for slide.
+ */
+
+@import "~@wordpress/base-styles/colors";
+
+.motto-carousel__slide {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	background: #FBFBFC;
+
+	/* stylelint-disable selector-max-specificity */
+	/* High specificity to required to override Gutenberg styles */
+	& > .block-editor-inner-blocks > .block-editor-block-list__layout {
+
+		& > .block-list-appender {
+			display: none;
+		}
+	}
+	/*stylelint-enable*/
+
+	img {
+		max-height: 360px;
+	}
+
+	.wp-block-button {
+		position: absolute;
+		bottom: 40px;
+		left: 30px;
+		transition: position 100ms;
+	}
+
+	.block-editor-media-placeholder {
+		align-items: center;
+
+		.components-placeholder__fieldset {
+			justify-content: center;
+		}
+	}
+}
+
+.motto-carousel__slide-inner-container {
+	width: 100%;
+	position: relative;
+
+	.motto-carousel__slide-has-image & {
+		width: auto;
+	}
+}

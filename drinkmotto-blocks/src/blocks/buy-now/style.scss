@@ -1,0 +1,52 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+.wp-block-motto-buy-now  {
+	text-align: center;
+
+	a {
+		background: $background;
+		color: $text !important;
+		align-items: stretch;
+		border-radius: .35rem;
+		display: inline-flex;
+		line-height: 1;
+		margin: 3rem auto;
+		padding: 1rem 0 1rem 1.5rem;
+		text-decoration: none;
+		text-transform: uppercase;
+
+		i {
+			align-items: center;
+			border-right: 1px solid #111;
+			display: inline-flex;
+			font-style: normal;
+			padding: 0.7rem 1.6rem .7rem 0;
+		}
+
+		span {
+			background: center url('../assets/images/amazon-logo-sm.png') no-repeat;
+			background-size: contain;
+			border-left: 1px solid #585657;
+			display: inline-block;
+			padding-left: 3.15rem;
+			padding-right: 3.15rem;
+
+		}
+
+		&:hover {
+			background: $hover;
+			color: $text;
+
+			span {
+			 border-left-color: hsl(143.3, 35.4%, 44.1%);
+			}
+			i {
+			 border-right-color: hsl(143.3, 35.4%, 34.7%);
+			}
+		}
+	}
+}

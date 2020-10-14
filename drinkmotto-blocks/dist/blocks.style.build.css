@@ -1,0 +1,663 @@
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.accordion-container {
+  width: 20%;
+  position: relative;
+  left: 2rem; }
+  .accordion-container .accordion {
+    margin: 0; }
+    .accordion-container .accordion *:first-child .accordion-trigger {
+      border-radius: 5px 5px 0 0; }
+    .accordion-container .accordion button {
+      width: 100%; }
+      .accordion-container .accordion button::-moz-focus-inner {
+        border: 0; }
+  .accordion-container .accordion-trigger {
+    background: none;
+    color: #212121;
+    display: block;
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 0;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    outline: none;
+    border-bottom: 1px solid rgba(145, 151, 162, 0.25);
+    padding: 3px 0 !important; }
+  .accordion-container .accordion-panel {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    padding: 3px 10px !important;
+    font-size: 13px; }
+  .accordion-container button {
+    border-style: none; }
+  .accordion-container .accordion-title {
+    display: block;
+    pointer-events: none;
+    border: transparent 2px solid;
+    border-radius: 5px;
+    padding: 0.25em;
+    outline: none; }
+  .accordion-container .accordion-icon {
+    border: solid #9e9e9e;
+    border-width: 0 2px 2px 0;
+    height: 0.5rem;
+    pointer-events: none;
+    position: absolute;
+    right: 2em;
+    top: 50%;
+    -webkit-transform: translateY(-60%) rotate(45deg);
+        -ms-transform: translateY(-60%) rotate(45deg);
+            transform: translateY(-60%) rotate(45deg);
+    width: 0.5rem; }
+  .accordion-container .accordion-trigger[aria-expanded="true"] .accordion-icon {
+    -webkit-transform: translateY(-50%) rotate(-135deg);
+        -ms-transform: translateY(-50%) rotate(-135deg);
+            transform: translateY(-50%) rotate(-135deg); }
+
+.accordion__heading {
+  max-width: 50%;
+  text-align: right;
+  width: 50%;
+  margin: 0 !important; }
+  .accordion__heading .accordion-icon {
+    display: none; }
+
+.accordion__title {
+  text-align: right; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.wp-block-motto-buy-now {
+  text-align: center; }
+  .wp-block-motto-buy-now a {
+    background: #2f2d2e;
+    color: #fff !important;
+    -ms-flex-align: stretch;
+        align-items: stretch;
+    border-radius: .35rem;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    line-height: 1;
+    margin: 3rem auto;
+    padding: 1rem 0 1rem 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase; }
+    .wp-block-motto-buy-now a i {
+      -ms-flex-align: center;
+          align-items: center;
+      border-right: 1px solid #111;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      font-style: normal;
+      padding: 0.7rem 1.6rem .7rem 0; }
+    .wp-block-motto-buy-now a span {
+      background: center url("../assets/images/amazon-logo-sm.png") no-repeat;
+      background-size: contain;
+      border-left: 1px solid #585657;
+      display: inline-block;
+      padding-left: 3.15rem;
+      padding-right: 3.15rem; }
+    .wp-block-motto-buy-now a:hover {
+      background: #3d8057;
+      color: #fff; }
+      .wp-block-motto-buy-now a:hover span {
+        border-left-color: #499868; }
+      .wp-block-motto-buy-now a:hover i {
+        border-right-color: #397851; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Minimal styling for slide.
+ */
+/**
+ * Colors
+ */
+/**
+ * Deprecated colors.
+ * Please avoid using these.
+ */
+.motto-carousel__slide {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  background: #FBFBFC;
+  /* stylelint-disable selector-max-specificity */
+  /* High specificity to required to override Gutenberg styles */
+  /*stylelint-enable*/ }
+  .motto-carousel__slide > .block-editor-inner-blocks > .block-editor-block-list__layout > .block-list-appender {
+    display: none; }
+  .motto-carousel__slide img {
+    max-height: 360px; }
+  .motto-carousel__slide .wp-block-button {
+    position: absolute;
+    bottom: 40px;
+    left: 30px;
+    -webkit-transition: position 100ms;
+    -o-transition: position 100ms;
+    transition: position 100ms; }
+  .motto-carousel__slide .block-editor-media-placeholder {
+    -ms-flex-align: center;
+        align-items: center; }
+    .motto-carousel__slide .block-editor-media-placeholder .components-placeholder__fieldset {
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.motto-carousel__slide-inner-container {
+  width: 100%;
+  position: relative; }
+  .motto-carousel__slide-has-image .motto-carousel__slide-inner-container {
+    width: auto; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * Carousel minimal styling.
+ */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.motto-carousel .wp-block[data-slide] {
+  -webkit-animation: fadeIn 800ms !important;
+          animation: fadeIn 800ms !important;
+  /* stylelint-disable-line declaration-no-important */
+  display: none; }
+
+.motto-carousel.motto-carousel--expanded .wp-block[data-slide] {
+  display: block; }
+
+.motto-carousel ul.motto-carousel__bullets {
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 28;
+  margin: 0;
+  padding: 0; }
+  .motto-carousel ul.motto-carousel__bullets li {
+    margin-left: 10px; }
+  .motto-carousel ul.motto-carousel__bullets a {
+    display: inline-block; }
+
+.motto-carousel .motto-carousel__thumbnails {
+  width: 100%; }
+
+.motto-carousel ul.motto-carousel__thumbnails-list {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: scroll; }
+
+.motto-carousel img.motto-carousel__thumbnail-image {
+  max-height: 65px; }
+
+.motto-carousel .motto-carousel__thumbnail {
+  margin-right: 10px; }
+
+.motto-carousel[data-active-slide="0"] .wp-block[data-slide="0"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="1"] .wp-block[data-slide="1"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="2"] .wp-block[data-slide="2"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="3"] .wp-block[data-slide="3"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="4"] .wp-block[data-slide="4"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="5"] .wp-block[data-slide="5"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="6"] .wp-block[data-slide="6"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="7"] .wp-block[data-slide="7"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="8"] .wp-block[data-slide="8"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="9"] .wp-block[data-slide="9"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="10"] .wp-block[data-slide="10"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="11"] .wp-block[data-slide="11"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="12"] .wp-block[data-slide="12"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="13"] .wp-block[data-slide="13"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="14"] .wp-block[data-slide="14"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="15"] .wp-block[data-slide="15"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="16"] .wp-block[data-slide="16"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="17"] .wp-block[data-slide="17"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="18"] .wp-block[data-slide="18"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="19"] .wp-block[data-slide="19"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="20"] .wp-block[data-slide="20"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="21"] .wp-block[data-slide="21"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="22"] .wp-block[data-slide="22"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="23"] .wp-block[data-slide="23"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="24"] .wp-block[data-slide="24"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="25"] .wp-block[data-slide="25"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="26"] .wp-block[data-slide="26"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="27"] .wp-block[data-slide="27"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="28"] .wp-block[data-slide="28"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="29"] .wp-block[data-slide="29"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="30"] .wp-block[data-slide="30"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="31"] .wp-block[data-slide="31"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="32"] .wp-block[data-slide="32"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="33"] .wp-block[data-slide="33"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="34"] .wp-block[data-slide="34"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="35"] .wp-block[data-slide="35"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="36"] .wp-block[data-slide="36"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="37"] .wp-block[data-slide="37"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="38"] .wp-block[data-slide="38"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="39"] .wp-block[data-slide="39"] {
+  display: block; }
+
+.motto-carousel[data-active-slide="40"] .wp-block[data-slide="40"] {
+  display: block; }
+
+.motto-carousel__slides {
+  position: relative;
+  /* stylelint-disable selector-max-specificity */
+  /* High specificity to required to override Gutenberg styles */
+  /* stylelint-enable selector-max-specificity */ }
+  .motto-carousel__slides > .block-editor-inner-blocks > .block-editor-block-list__layout > .block-list-appender {
+    display: none; }
+    .has-child-selected[data-type="motto/carousel"] .motto-carousel__slides > .block-editor-inner-blocks > .block-editor-block-list__layout > .block-list-appender {
+      display: block; }
+
+.motto-carousel__prev-button,
+.motto-carousel__next-button {
+  position: absolute;
+  top: calc( 50% - 22px);
+  z-index: 28;
+  display: inline-block;
+  -webkit-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+  /* stylelint-disable-line declaration-no-important */ }
+  .motto-carousel--expanded .motto-carousel__prev-button, .motto-carousel--expanded
+  .motto-carousel__next-button {
+    display: none; }
+  .has-child-selected .motto-carousel__prev-button, .has-child-selected
+  .motto-carousel__next-button {
+    margin-top: -53px !important;
+    /* stylelint-disable-line declaration-no-important */ }
+
+.motto-carousel__prev-button {
+  left: 10px; }
+
+.motto-carousel__next-button {
+  right: 10px; }
+
+.motto-carousel__active-bullet {
+  font-weight: 700; }
+
+/* stylelint-disable selector-max-specificity */
+.block-editor-block-list__layout .block-editor-block-list__block.is-focus-mode:not(.is-multi-selected)[data-type="motto/carousel"],
+.block-editor-block-list__layout .block-editor-block-list__block.is-focus-mode:not(.is-multi-selected)[data-type="motto/carousel-slide"] {
+  opacity: 1; }
+
+/* stylelint-enable selector-max-specificity */
+/*stylelint-disable*/
+.tns-outer {
+  padding: 0 !important; }
+  .tns-outer [hidden] {
+    display: none !important; }
+  .tns-outer [aria-controls], .tns-outer [data-action] {
+    cursor: pointer; }
+
+.tns-slider {
+  -webkit-transition: all 0s;
+  -o-transition: all 0s;
+  transition: all 0s; }
+  .tns-slider > .tns-item {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+
+.tns-horizontal.tns-subpixel {
+  white-space: nowrap; }
+  .tns-horizontal.tns-subpixel > .tns-item {
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal; }
+
+.tns-horizontal.tns-no-subpixel:after {
+  content: '';
+  display: table;
+  clear: both; }
+
+.tns-horizontal.tns-no-subpixel > .tns-item {
+  float: left; }
+
+.tns-horizontal.tns-carousel.tns-no-subpixel > .tns-item {
+  margin-right: -100%; }
+
+.tns-no-calc {
+  position: relative;
+  left: 0; }
+
+.tns-gallery {
+  position: relative;
+  left: 0;
+  min-height: 1px; }
+  .tns-gallery > .tns-item {
+    position: absolute;
+    left: -100%;
+    -webkit-transition: transform 0s, opacity 0s;
+    -webkit-transition: opacity 0s, -webkit-transform 0s;
+    transition: opacity 0s, -webkit-transform 0s;
+    -o-transition: transform 0s, opacity 0s;
+    transition: transform 0s, opacity 0s;
+    transition: transform 0s, opacity 0s, -webkit-transform 0s; }
+  .tns-gallery > .tns-slide-active {
+    position: relative;
+    left: auto !important; }
+  .tns-gallery > .tns-moving {
+    -webkit-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    transition: all 0.25s; }
+
+.tns-autowidth {
+  display: inline-block; }
+
+.tns-lazy-img {
+  -webkit-transition: opacity 0.6s;
+  -o-transition: opacity 0.6s;
+  transition: opacity 0.6s;
+  opacity: 0.6; }
+  .tns-lazy-img.tns-complete {
+    opacity: 1; }
+
+.tns-ah {
+  -webkit-transition: height 0s;
+  -o-transition: height 0s;
+  transition: height 0s; }
+
+.tns-ovh {
+  overflow: hidden; }
+
+.tns-visually-hidden {
+  position: absolute;
+  left: -10000em; }
+
+.tns-transparent {
+  opacity: 0;
+  visibility: hidden; }
+
+.tns-fadeIn {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  z-index: 0; }
+
+.tns-normal, .tns-fadeOut {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  z-index: -1; }
+
+.tns-vpfix {
+  white-space: nowrap; }
+  .tns-vpfix > div, .tns-vpfix > li {
+    display: inline-block; }
+
+.tns-t-subp2 {
+  margin: 0 auto;
+  width: 310px;
+  position: relative;
+  height: 10px;
+  overflow: hidden; }
+
+.tns-t-ct {
+  width: 2333.33333%;
+  width: calc(100% * 70 / 3);
+  position: absolute;
+  right: 0; }
+  .tns-t-ct:after {
+    content: '';
+    display: table;
+    clear: both; }
+  .tns-t-ct > div {
+    width: 1.42857%;
+    width: calc(100% / 70);
+    height: 10px;
+    float: left; }
+
+/*stylelint-enable*/
+.motto-carousel-wrapper {
+  position: relative;
+  max-width: 710px; }
+  .motto-carousel-wrapper .motto-carousel {
+    visibility: hidden; }
+    .motto-carousel-wrapper .motto-carousel.tns-slider {
+      visibility: visible; }
+
+.motto-carousel__slide {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center; }
+  .motto-carousel__slide .wp-block-button {
+    position: absolute;
+    bottom: 40px;
+    left: 40px; }
+  .motto-carousel__slide img {
+    max-height: 360px; }
+
+.motto-carousel__slide-inner-container {
+  display: inline-block;
+  position: relative; }
+  .single .motto-carousel__slide-inner-container {
+    padding-left: 24px;
+    padding-right: 24px; }
+
+.motto-carousel__thumbnails {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e4e4e4));
+  background: -webkit-linear-gradient(top, #ffffff 0%, #e4e4e4 100%);
+  background: -o-linear-gradient(top, #ffffff 0%, #e4e4e4 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #e4e4e4 100%);
+  padding: 8px;
+  margin-bottom: 35px; }
+
+.motto-carousel__thumbnails-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  max-width: 100%;
+  overflow-x: scroll; }
+  .motto-carousel__thumbnails-list li {
+    margin-right: 10px;
+    -ms-flex-preferred-size: 55px;
+        flex-basis: 55px;
+    height: 32px;
+    border-radius: 8px;
+    overflow: hidden;
+    opacity: 0.5;
+    border: 1px solid #aaaaaa;
+    cursor: pointer; }
+    .motto-carousel__thumbnails-list li.tns-nav-active, .motto-carousel__thumbnails-list li.motto-carousel__thumbnail--active {
+      opacity: 1;
+      border-color: #000000; }
+  .motto-carousel__thumbnails-list img {
+    width: 100%;
+    height: 100%; }
+
+.motto-carousel__bullets {
+  list-style: none;
+  padding: 3px;
+  margin: 0;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 8px;
+  right: 5px;
+  background-color: #d0d0d0;
+  text-align: center;
+  border-radius: 6px; }
+  .motto-carousel__bullets li {
+    margin: 0 5px;
+    display: inline-block; }
+    .motto-carousel__bullets li.tns-nav-active a,
+    .motto-carousel__bullets li.motto-carousel__active-bullet a {
+      color: #ffffff;
+      background: #000000;
+      cursor: default; }
+  .motto-carousel__bullets a {
+    background: #ffffff;
+    -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
+    margin-top: -15px;
+    display: initial;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px;
+    color: #000000;
+    border-radius: 20px; }
+
+.motto-carousel__nav {
+  z-index: 10;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.motto-carousel__prev-button,
+.motto-carousel__next-button {
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 43px;
+  margin-top: -20px;
+  background-image: background_url("slides_nav_arrows.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  text-indent: -9999px;
+  opacity: 0.3; }
+  .motto-carousel-style-2 .motto-carousel__prev-button, .motto-carousel-style-2
+  .motto-carousel__next-button {
+    top: 42%; }
+  .motto-carousel__prev-button:hover,
+  .motto-carousel__next-button:hover {
+    opacity: 1; }
+
+.motto-carousel__prev-button {
+  left: 20px; }
+  .single .motto-carousel__prev-button {
+    left: 0; }
+
+.motto-carousel__next-button {
+  right: 20px;
+  background-position: 100% 0; }
+  .single .motto-carousel__next-button {
+    right: 0; }
+
+.motto-carousel-style-2 .block-editor-block-list__block {
+  margin-bottom: 0; }
+
+.motto-carousel-style-2 .motto-carousel__bullets {
+  display: none; }
+
+.motto-carousel-style-2 .motto-carousel__prev-button, .motto-carousel-style-2
+.motto-carousel__next-button {
+  top: 50%; }

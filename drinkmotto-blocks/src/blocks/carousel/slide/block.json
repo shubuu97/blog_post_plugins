@@ -1,0 +1,52 @@
+{
+  "name": "motto/carousel-slide",
+  "category": "motto",
+  "attributes": {
+	"mediaAlt": {
+	  "type": "string"
+	},
+	"mediaId": {
+	  "type": "number"
+	},
+	"mediaUrl": {
+	  "type": "string"
+	},
+	"mediaWidth": {
+	  "type": "number"
+	},
+	"mediaHeight": {
+	  "type": "number"
+	},
+	"thumbnailUrl": {
+	  "type": "string"
+	},
+	"thumbnailWidth": {
+	  "type": "number"
+	},
+	"thumbnailHeight": {
+	  "type": "number"
+	},
+	"buttonText": {
+	  "type": "string",
+	  "source": "html",
+	  "selector": ".wp-block-button__link"
+	},
+	"buttonUrl": {
+	  "type": "string"
+	},
+	"buttonBottomSpacing": {
+	  "type": "number"
+	},
+	"buttonLeftSpacing": {
+	  "type": "number"
+	},
+	"showButton": {
+	  "type": "boolean",
+	  "default": true
+	},
+	"id": {
+	  "type": "number",
+	  "default": 0
+	}
+  }
+}

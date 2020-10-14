@@ -1,0 +1,29 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.blocks-moto-buy-now-toolbar {
+	background: #ddd;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -2.5rem;
+	padding: 1rem;
+  width: min-content;
+
+	.block-editor-url-input {
+		display: flex;
+		width: min-content;
+	}
+
+	.components-base-control__field {
+		margin-bottom: 0;
+	}
+}
+
+.wp-block-moto-buy-now {
+  position: relative;
+}

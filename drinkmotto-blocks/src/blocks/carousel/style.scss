@@ -1,0 +1,310 @@
+/**
+ * Carousel minimal styling.
+ */
+
+@import "~@wordpress/base-styles/z-index";
+
+$black: #000000;
+$white: #ffffff;
+
+$z-index-carousel-arrows: 10;
+
+
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+
+.motto-carousel {
+
+	.wp-block[data-slide] {
+		animation: fadeIn 800ms !important; /* stylelint-disable-line declaration-no-important */
+		display: none;
+	}
+
+	&.motto-carousel--expanded .wp-block[data-slide] {
+		display: block;
+	}
+
+	ul.motto-carousel__bullets {
+		display: flex;
+		list-style: none;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		z-index: z-index( '.block-editor-block-list__insertion-point-popover' );
+		margin: 0;
+		padding: 0;
+
+		li {
+			margin-left: 10px;
+		}
+
+		a {
+			display: inline-block;
+		}
+	}
+
+	.motto-carousel__thumbnails {
+		width: 100%;
+	}
+
+	ul.motto-carousel__thumbnails-list {
+		display: flex;
+		justify-content: center;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		overflow-x: scroll;
+	}
+
+	img.motto-carousel__thumbnail-image {
+		max-height: 65px;
+	}
+
+	.motto-carousel__thumbnail {
+		margin-right: 10px;
+	}
+}
+
+@for $i from 0 through 40 {
+	.motto-carousel[data-active-slide="#{$i}"] .wp-block[data-slide="#{$i}"] {
+		display: block;
+	}
+}
+
+.motto-carousel__slides {
+	position: relative;
+
+	/* stylelint-disable selector-max-specificity */
+	/* High specificity to required to override Gutenberg styles */
+	& > .block-editor-inner-blocks > .block-editor-block-list__layout {
+
+		& > .block-list-appender {
+			display: none;
+
+			.has-child-selected[data-type="motto/carousel"] & {
+				display: block;
+			}
+		}
+	}
+	/* stylelint-enable selector-max-specificity */
+}
+
+.motto-carousel__prev-button,
+.motto-carousel__next-button {
+	position: absolute;
+	top: calc( 50% - 22px );
+	z-index: z-index( '.block-editor-block-list__insertion-point-popover' );
+	display: inline-block;
+	transition: none !important; /* stylelint-disable-line declaration-no-important */
+
+	.motto-carousel--expanded & {
+		display: none;
+	}
+
+	.has-child-selected & {
+		margin-top: -53px !important; /* stylelint-disable-line declaration-no-important */
+	}
+}
+
+.motto-carousel__prev-button {
+	left: 10px;
+}
+
+.motto-carousel__next-button {
+	right: 10px;
+}
+
+.motto-carousel__active-bullet {
+	font-weight: 700;
+}
+
+/* stylelint-disable selector-max-specificity */
+.block-editor-block-list__layout .block-editor-block-list__block.is-focus-mode:not(.is-multi-selected)[data-type="motto/carousel"],
+.block-editor-block-list__layout .block-editor-block-list__block.is-focus-mode:not(.is-multi-selected)[data-type="motto/carousel-slide"] {
+	opacity: 1;
+}
+/* stylelint-enable selector-max-specificity */
+
+@import "./vendor/slick";
+
+.motto-carousel-wrapper {
+  position: relative;
+  max-width: 710px;
+
+  // Hide during is is loading.
+  .motto-carousel {
+	visibility: hidden;
+
+	&.tns-slider {
+	  visibility: visible;
+	}
+  }
+}
+
+.motto-carousel__slide {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  .wp-block-button {
+	position: absolute;
+	bottom: 40px;
+	left: 40px;
+  }
+
+  img {
+	max-height: 360px;
+  }
+}
+
+.motto-carousel__slide-inner-container {
+  display: inline-block;
+  position: relative;
+
+  .single & {
+	padding-left: 24px;
+	padding-right: 24px;
+  }
+}
+
+.motto-carousel__thumbnails {
+  background: linear-gradient(to bottom, $white 0%, #e4e4e4 100%);
+  padding: 8px;
+  margin-bottom: 35px;
+}
+
+.motto-carousel__thumbnails-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display:flex;
+  justify-content: center;
+  max-width: 100%;
+  overflow-x: scroll;
+
+  li {
+	margin-right: 10px;
+	flex-basis: 55px;
+	height: 32px;
+	border-radius: 8px;
+	overflow: hidden;
+	opacity: 0.5;
+	border: 1px solid #aaaaaa;
+	cursor: pointer;
+
+	&.tns-nav-active,
+	&.motto-carousel__thumbnail--active {
+	  opacity: 1;
+	  border-color: $black;
+	}
+  }
+
+  img {
+	width: 100%;
+	height: 100%; // Yes it shouldn't be done, but that's how it is on the live site.
+  }
+}
+
+.motto-carousel__bullets {
+  list-style: none;
+  padding: 3px;
+  margin: 0;
+  display:flex;
+  position: absolute;
+  top: 8px;
+  right: 5px;
+  background-color: #d0d0d0;
+  text-align: center;
+  border-radius: 6px;
+
+  li {
+	margin: 0 5px;
+	display: inline-block;
+
+	&.tns-nav-active a,
+	&.motto-carousel__active-bullet a {
+	  color: $white;
+	  background: $black;
+	  cursor: default;
+	}
+  }
+
+  a {
+	background: $white;
+	box-shadow: inset 0 0 2px rgba(0,0,0,0.2);
+	margin-top: -15px;
+	display: initial;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 2px;
+	color: $black;
+	border-radius: 20px;
+  }
+}
+
+.motto-carousel__nav {
+  z-index: $z-index-carousel-arrows;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.motto-carousel__prev-button,
+.motto-carousel__next-button {
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 43px;
+  margin-top: -20px;
+  background-image: background_url( 'slides_nav_arrows.png' );
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  text-indent: -9999px;
+  opacity: 0.3;
+
+  .motto-carousel-style-2 & {
+	top: 42%; // Adjust thumbnails height, calc didn't work.
+  }
+
+  &:hover {
+	opacity: 1;
+  }
+}
+
+.motto-carousel__prev-button {
+  left: 20px;
+
+  .single & {
+	left: 0;
+  }
+}
+
+.motto-carousel__next-button {
+  right: 20px;
+  background-position: 100% 0;
+
+  .single & {
+	right: 0;
+  }
+}
+
+
+.motto-carousel-style-2 {
+  .block-editor-block-list__block {
+	margin-bottom: 0;
+  }
+
+  .motto-carousel__bullets {
+	display: none;
+  }
+}
+
+.motto-carousel__prev-button,
+.motto-carousel__next-button {
+  .motto-carousel-style-2 & {
+	top: 50%;
+  }
+}
+

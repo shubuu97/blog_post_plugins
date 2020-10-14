@@ -1,0 +1,18 @@
+{
+  "name": "motto/carousel",
+  "category": "motto",
+  "attributes": {
+	"showButton": {
+	  "type": "boolean",
+	  "default": true
+	},
+	"style": {
+	  "type": "string",
+	  "default": "motto-carousel-style-1"
+	},
+	"currentSlideIndex": {
+	  "type": "number",
+	  "default": 0
+	}
+  }
+}
